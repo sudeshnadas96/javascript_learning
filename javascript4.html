@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <table>
+            <tr><td> <input type="text" name="a" id="first" placeholder="Enter if you are married/unmarried"></td></tr>
+            <tr><td><input type="text" name="b" id="second" placeholder="Enter if you are male/female"></td></tr>
+            <tr><td><input type="number" name="c" id="third" placeholder="Enter your age"></td></tr>
+        </table>    
+            <button onclick="Conditions()"> Submit </button>
+        
+        <div id="num"></div>
+        <script>
+            function Conditions() {
+            const a = document.getElementById("first").value;
+            const b = document.getElementById("second").value;
+            const c = parseInt(document.getElementById("third").value);
+            let resultMessage = '';
+            if(a=="Married") {
+                resultMessage="driver is insured";
+            } else if(a =="Unmarried" && b == "male" && c > 30) {
+                resultMessage="driver is insured";   
+            } else if(a =="Married" && b =="female" && c>25) {
+                resultMessage="driver is insured";
+            } else{
+                resultMessage="driver is not insured";
+            }
+            document.getElementById("num").innerHTML= resultMessage;
+        }
+        </script>
+    </body>
+</html>            
+                
